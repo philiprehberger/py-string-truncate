@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-string-truncate"
-version = "0.1.0"
+version = "0.1.1"
 description = "Truncate strings intelligently without cutting words"
 readme = "README.md"
 license = "MIT"
@@ -24,9 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/philiprehberger/py-string-truncate"
+Homepage = "https://github.com/philiprehberger/py-string-truncate#readme"
 Repository = "https://github.com/philiprehberger/py-string-truncate"
 Issues = "https://github.com/philiprehberger/py-string-truncate/issues"
+Changelog = "https://github.com/philiprehberger/py-string-truncate/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_string_truncate"]
