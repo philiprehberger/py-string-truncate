@@ -36,6 +36,14 @@ truncate_path("/very/long/path/to/some/file.txt", max_length=25)
 - `truncate_middle(text, max_length, separator="…")` — Keep start and end
 - `truncate_path(path, max_length, separator="/", placeholder="...")` — Path-aware truncation
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
