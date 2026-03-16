@@ -1,5 +1,9 @@
 # philiprehberger-string-truncate
 
+[![Tests](https://github.com/philiprehberger/py-string-truncate/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-string-truncate/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-string-truncate.svg)](https://pypi.org/project/philiprehberger-string-truncate/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-string-truncate)](LICENSE)
+
 Truncate strings intelligently without cutting words.
 
 ## Installation
