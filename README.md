@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/py-string-truncate/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-string-truncate/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-string-truncate.svg)](https://pypi.org/project/philiprehberger-string-truncate/)
 [![License](https://img.shields.io/github/license/philiprehberger/py-string-truncate)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Truncate strings intelligently without cutting words.
 
