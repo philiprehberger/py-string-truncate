@@ -32,9 +32,11 @@ truncate_path("/very/long/path/to/some/file.txt", max_length=25)
 
 ## API
 
-- `truncate(text, max_length, suffix="…", break_words=False)` — Word-boundary truncation
-- `truncate_middle(text, max_length, separator="…")` — Keep start and end
-- `truncate_path(path, max_length, separator="/", placeholder="...")` — Path-aware truncation
+| Function / Class | Description |
+|------------------|-------------|
+| `truncate(text, max_length, suffix="…", break_words=False)` | Word-boundary truncation |
+| `truncate_middle(text, max_length, separator="…")` | Keep start and end |
+| `truncate_path(path, max_length, separator="/", placeholder="...")` | Path-aware truncation |
 
 ## Development
 
