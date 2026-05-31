@@ -2,11 +2,15 @@
 
 from __future__ import annotations
 
+import textwrap
+
 
 __all__ = [
     "truncate",
     "truncate_middle",
     "truncate_path",
+    "truncate_words",
+    "wrap",
 ]
 
 
@@ -129,3 +133,55 @@ def truncate_path(
         included.append(first)
 
     return separator.join(included) + separator + placeholder + separator + last
+
+
+def truncate_words(text: str, max_words: int, suffix: str = "...") -> str:
+    """Truncate *text* to at most *max_words* words; append *suffix* if truncated.
+
+    Words are split on whitespace. Suffix is appended only when the
+    text actually had more words than the limit.
+
+    Args:
+        text: The string to truncate.
+        max_words: Maximum number of words to keep.
+        suffix: String to append when truncated. Defaults to ``"..."``.
+
+    Returns:
+        Truncated string with at most ``max_words`` words.
+
+    Raises:
+        ValueError: If ``max_words`` is negative.
+    """
+    if max_words < 0:
+        raise ValueError("max_words must be >= 0")
+
+    words = text.split()
+    if len(words) <= max_words:
+        return text
+
+    kept = " ".join(words[:max_words])
+    return kept + suffix if kept else suffix
+
+
+def wrap(text: str, width: int = 80) -> str:
+    """Wrap *text* to lines at word boundaries; lines never exceed *width* chars.
+
+    Paragraph breaks (double newlines) are preserved. Single newlines
+    within paragraphs are normalized to spaces.
+
+    Args:
+        text: The string to wrap.
+        width: Maximum line width in characters. Defaults to ``80``.
+
+    Returns:
+        Wrapped string with lines no longer than ``width``.
+
+    Raises:
+        ValueError: If ``width`` is less than 1.
+    """
+    if width < 1:
+        raise ValueError("width must be >= 1")
+
+    paragraphs = text.split("\n\n")
+    wrapped = [textwrap.fill(paragraph, width=width) for paragraph in paragraphs]
+    return "\n\n".join(wrapped)

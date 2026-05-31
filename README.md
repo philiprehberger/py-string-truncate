@@ -30,6 +30,30 @@ truncate_path("/very/long/path/to/some/file.txt", max_length=25)
 # "/very/long/.../file.txt"
 ```
 
+### Word-count truncation
+
+```python
+from philiprehberger_string_truncate import truncate_words
+
+truncate_words("one two three four five", max_words=3)
+# "one two three..."
+
+truncate_words("one two", max_words=5)
+# "one two"
+```
+
+### Wrapping
+
+```python
+from philiprehberger_string_truncate import wrap
+
+wrap("the quick brown fox jumps over the lazy dog", width=20)
+# "the quick brown fox\njumps over the lazy\ndog"
+
+wrap("first paragraph\n\nsecond paragraph", width=80)
+# "first paragraph\n\nsecond paragraph"
+```
+
 ## API
 
 | Function / Class | Description |
@@ -37,6 +61,8 @@ truncate_path("/very/long/path/to/some/file.txt", max_length=25)
 | `truncate(text, max_length, suffix="…", break_words=False)` | Word-boundary truncation |
 | `truncate_middle(text, max_length, separator="…")` | Keep start and end |
 | `truncate_path(path, max_length, separator="/", placeholder="...")` | Path-aware truncation |
+| `truncate_words(text, max_words, suffix="...")` | Truncate to a word count, appending suffix when shortened |
+| `wrap(text, width=80)` | Wrap to lines at word boundaries; preserves paragraph breaks |
 
 ## Development
 
